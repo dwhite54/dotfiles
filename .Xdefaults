@@ -1,0 +1,55 @@
+! special
+*.foreground:   #eeeeee
+*.background:   #000000
+*.cursorColor:  #eeeeee
+
+! black
+*.color0:       #1d1d1d
+*.color8:       #6e6ea0
+
+! red
+*.color1:       #ff0000
+*.color9:       #ff6e6e
+
+! green
+*.color2:       #33ff00
+*.color10:      #a5ff8e
+
+! yellow
+*.color3:       #fffb00
+*.color11:      #fbff87
+
+! blue
+*.color4:       #0066ff
+*.color12:      #84b5ff
+
+! magenta
+*.color5:       #cc00ff
+*.color13:      #e992ff
+
+! cyan
+*.color6:       #00dede
+*.color14:      #7ddddd
+
+! white
+*.color7:       #d0d0d0
+*.color15:      #ffffff
+
+*font: xft:Monospace:pixelsize=14
+*boldFont: xft:Monospace:pixelsize=14
+urxvt*depth: 32
+urxvt*background: rgba:0000/0000/0200/c800
+URxvt.scrollBar: false
+URxvt*perl-ext-common: 52-osc,font-size
+
+URxvt.keysym.C-Up:     font-size:increase
+URxvt.keysym.C-Down:   font-size:decrease
+URxvt.keysym.C-S-Up:   font-size:incglobal
+URxvt.keysym.C-S-Down: font-size:decglobal
+URxvt.keysym.C-equal:  font-size:reset
+URxvt.keysym.C-slash:  font-size:show
+
+URxvt.keysym.Home: \033[1~
+URxvt.keysym.End: \033[4~
+URxvt.keysym.KP_Home: \033[1~
+URxvt.keysym.KP_End:  \033[4~
