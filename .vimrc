@@ -20,6 +20,10 @@ Plugin 'tmhedberg/SimpylFold'
 " Plugin 'nathanaelkane/vim-indent-guides'
 " Plugin 'vim-syntastic/syntastic'
 Plugin 'Konfekt/FastFold'
+Plugin 'scrooloose/nerdtree'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " more Plugin commands
 " ...
@@ -27,6 +31,24 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " plugin settings
+" airline
+let g:airline_powerline_fonts = 1
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
+
+" colors
+syntax enable
+set background=dark
+colorscheme solarized
+"let g:solarized_termtrans=1
+autocmd VimEnter * source ~/.vimrc
+
+
+" nerdtree
+autocmd vimenter * NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <C-n> :NERDTreeToggle<CR>
+
 " youcompleteme
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_confirm_extra_conf = 0
@@ -44,8 +66,8 @@ nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " vim-vebugger
 set showcmd
 let g:vebugger_leader = "\\"
-command PDB VBGstartPDB %
-command PEX VimProcBang python3 %
+"command PDB VBGstartPDB %
+"command PEX VimProcBang python3 %
 
 " syntastic
 " set statusline+=%#warningmsg#
@@ -62,7 +84,6 @@ command PEX VimProcBang python3 %
 set backspace=indent,eol,start
 map!  <BS>
 
-syntax enable
 " enable mouse usage in all scenarios (incl tmux)
 set mouse=a
 
@@ -89,11 +110,11 @@ nnoremap <silent> N Nzz
 nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 
-color delek
-highlight Search ctermfg=black ctermbg=yellow
+"color delek
+"highlight Search ctermfg=black ctermbg=yellow
 
-set colorcolumn=110
-highlight ColorColumn ctermbg=4
+"set colorcolumn=110
+"highlight ColorColumn ctermbg=4
 
 set listchars=trail:_,extends:>,precedes:<,nbsp:~
 " SimPylFold and original folding
